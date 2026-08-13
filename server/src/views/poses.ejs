@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Yoga Poses</title>
+</head>
+<body>
+    <h1>Yoga Poses</h1>
+    <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% poses.forEach(pose => { %>
+        <div class="col">
+            <div class="card h-100">
+                <img src="<%= pose.url_svg %>" class="card-img-top" alt="<%= pose.english_name %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= pose.english_name %></h5>
+                    <p class="card-text"><%= pose.pose_description %></p>
+                    <a href="#" class="btn btn-primary">Add To Flow</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+</div>
+</body>
+</html>

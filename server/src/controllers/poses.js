@@ -5,7 +5,7 @@ module.exports = {
     // },
 
     showPoses: async(req, res) => {
-        const url = "https://yoga-api-nzy4.onrender.com/v1";
+        const url = "https://yoga-api-nzy4.onrender.com/v1/poses";
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -13,7 +13,11 @@ module.exports = {
             }
 
         const poses = await response.json();
-        res.render("poses.ejs", {
+        // console.log(poses);
+        // for(pose of poses){
+
+        // }
+        res.render("poses", {
             poses: poses,
         });
         } catch (error) {
